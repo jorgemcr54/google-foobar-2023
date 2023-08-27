@@ -41,18 +41,6 @@ def restar_matriz_identidad(matriz):
                 matriz[i][j] = 0 - matriz[i][j]
     return matriz
 
-def matriz_adjunta(matriz):
-    n = len(matriz)
-    adjunta = []
-    for i in range(n):
-        fila_adjunta = []
-        for j in range(n):
-            submatriz = [fila[:j] + fila[j+1:] for fila in (matriz[:i]+matriz[i+1:])]
-            determinante = determinante_matriz(submatriz)
-            signo = (-1) ** (i + j)
-            fila_adjunta.append(signo * determinante)
-        adjunta.append(fila_adjunta)
-    return adjunta
 
 
 def multiplicar_matrices(matriz1, matriz2):
