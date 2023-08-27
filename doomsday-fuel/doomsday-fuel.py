@@ -41,8 +41,6 @@ def restar_matriz_identidad(matriz):
                 matriz[i][j] = 0 - matriz[i][j]
     return matriz
 
-
-
 def multiplicar_matrices(matriz1, matriz2):
     resultado = [[0 for _ in range(len(matriz2[0]))] for _ in range(len(matriz1))]
     for i in range(len(matriz1)):
@@ -98,11 +96,8 @@ def solution(m):
         respuesta.append(matriz_final[0][i].numerator)
         denominador = calcular_mcm(denominador,matriz_final[0][i].denominator)
     
-    
-
     for i in range(len(respuesta)):
         respuesta[i] = int((denominador/denominadores[i])*respuesta[i])
 
     respuesta.append(denominador)
-    
     return(respuesta)
