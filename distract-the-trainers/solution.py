@@ -24,8 +24,6 @@ def solution(banana_list):
     cont[0] = 0
     potencias_dos = [2 ** n for n in range(1, 32)]
     potencias_dos_mas_uno = [x - 1 for x in potencias_dos[:]]
-    print(potencias_dos)
-    print(potencias_dos_mas_uno)
     banana_list.sort(reverse=True)
     print(banana_list)
     lista_parejas = []
@@ -33,11 +31,12 @@ def solution(banana_list):
         for j in range(i + 1, len(banana_list)):
             if validate_pair(banana_list[i],banana_list[j],potencias_dos,potencias_dos_mas_uno):
                 lista_parejas.append([i,j])
+
     print(lista_parejas)
-    find_combinations(lista_parejas)
+    #find_combinations(lista_parejas)
     return len(banana_list) - cont[0]
     
 
 #print(validate_pair(10737,432648))
-print(solution([1, 7, 3, 21, 13, 19,1,335,3456,43643,543,5234,32,423,4,234,23,432,4,324,23]))
+print(solution([7,1,7893,4,5,7]))
 
